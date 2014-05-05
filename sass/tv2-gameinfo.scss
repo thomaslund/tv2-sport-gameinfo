@@ -1,0 +1,193 @@
+%clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+%focus-outline{
+    outline-color: rgb(91, 157, 217);
+    outline-width: 5px;
+    outline-style: auto;
+}
+%focus{
+	background-color: #b4e7fc;
+    color: black;
+}
+
+.module-gameinfo{
+	h2{
+		padding: 0.5em;
+		text-align: center;
+	}
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style: none;
+	}
+	.match{
+		@extend %clearfix;
+		margin-bottom: 2em;
+		
+		&:focus{
+			outline:none;
+
+			.team{
+				@extend %focus-outline;
+			}
+		}
+
+
+		> div.c4{
+			padding-left: 0.15em;
+			@extend %clearfix;
+
+			&:first-child{
+				padding-left: 0;
+				text-align: right;
+				padding-right: 0.15em;
+			}
+		}
+
+		.team{
+			display: table;
+			width: 100%;
+		}
+
+		h3{
+			display: table-cell;
+			padding: 0 0.5em;
+			font-weight: 300;
+		}
+		.score{
+			display: table-cell;
+			width: 2em;
+			padding: 0.5em;
+			text-align: center;
+
+		}
+		ul.match-history{
+			display: block;
+			width: 100%;
+			text-align: center;
+			line-height: 100%;
+
+			li{
+				text-indent: -9999px;
+				display: inline-block;
+				width: 1em;
+				height: 0.5em;
+				margin: 0.5em 0.15em 0 0.15em;
+				
+				&.loss{
+					background-color: #f52612;
+				}
+				&.draw{
+					background-color: #ffc600;
+				}
+				&.win{
+					background-color: #30b22a;
+				}
+
+			}
+		}
+
+		
+
+		.metadata{
+			position: relative;
+			padding-bottom: 1.5em;
+			border-bottom: 1px solid rgba(0,0,0,0.15);
+
+			strong.half-time-score{
+				position: absolute;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+				top: 3em;
+			}
+			strong.channels{
+				position: absolute;
+				left: 50%;
+				bottom: -1em;
+				padding: 0.4em;
+				background-color: #fff;
+				font-weight: 700;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+				border: 1px solid rgba(0,0,0,0.15);
+				width: 80%;
+				text-align: center;
+				display: block;
+			}
+
+			p, time{
+				margin: 0;
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+
+	&.tiny{
+		.match{
+			margin-bottom: 1em;
+		}
+		.match .c4{
+			width: 100%;
+			padding: 0;
+
+			&:first-child{
+				text-align: left;
+				padding: 0;
+				border-bottom: 1px solid rgba(0,0,0,0.15);
+			}
+			.score{
+				float: right;
+				width: 15%;
+				text-align: center;
+			}
+			h3{
+				width: 85%;
+				float: left;
+				padding: 0.5em;
+			}
+
+			.match-history{
+				display: none;
+			}
+
+
+		}
+		.metadata {
+			padding-bottom: 0;
+
+			time{
+				text-align: left;
+			}
+			strong.half-time-score,
+			strong.channels,
+			p{
+				display: none;
+			}
+		}
+	}	
+
+	&.narrow{
+
+	}
+	&.medium,
+	&.normal{
+		.metadata strong.channels{
+			width: auto;
+			padding: 0.4em 1em;
+		}
+	}
+}
