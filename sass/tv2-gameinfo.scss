@@ -41,6 +41,7 @@
 	.match{
 		@extend %clearfix;
 		margin-bottom: 2em;
+		cursor: pointer;
 		
 		&:focus{
 			outline: 0;
