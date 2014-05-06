@@ -21,6 +21,8 @@
 }
 
 .module-gameinfo{
+	@extend %clearfix;
+
 	h2{
 		padding: 0.5em;
 		text-align: center;
@@ -32,15 +34,20 @@
 	li{
 		list-style: none;
 	}
+	.bg-darken-light{
+		//custom bg for darkening background-color, making the module usable across a range of background-colors
+		background-color: rgba(0,0,0,0.085);
+	}
 	.match{
 		@extend %clearfix;
 		margin-bottom: 2em;
 		
 		&:focus{
-			outline:none;
+			
+			@extend %focus-outline;
 
 			.team{
-				@extend %focus-outline;
+				//@extend %focus-outline;
 			}
 		}
 
@@ -65,18 +72,25 @@
 			display: table-cell;
 			padding: 0 0.5em;
 			font-weight: 300;
+
+			img{
+				padding: 0 0.5em;
+				height: 1.5em;
+				vertical-align: -35%;
+			}
 		}
 		.score{
 			display: table-cell;
 			width: 2em;
 			padding: 0.5em;
 			text-align: center;
+			font-weight: 700;
 
 		}
 		ul.match-history{
 			display: block;
 			width: 100%;
-			text-align: center;
+			padding: 0 2.65em;
 			line-height: 100%;
 
 			li{
@@ -103,15 +117,19 @@
 
 		.metadata{
 			position: relative;
-			padding-bottom: 1.5em;
+			padding: 0.5em 0;
 			border-bottom: 1px solid rgba(0,0,0,0.15);
+			clear: both;
 
 			strong.half-time-score{
 				position: absolute;
 				left: 50%;
 				-webkit-transform: translateX(-50%);
 				transform: translateX(-50%);
-				top: 3em;
+				top: -1em;
+			}
+			strong.channels + time{
+				padding-bottom: 1.25em;
 			}
 			strong.channels{
 				position: absolute;
@@ -126,14 +144,15 @@
 				width: 80%;
 				text-align: center;
 				display: block;
+				color: #000;
 			}
-
 			p, time{
 				margin: 0;
 				text-align: center;
 				display: block;
 			}
 		}
+		
 	}
 
 	&.tiny{
@@ -143,6 +162,7 @@
 		.match .c4{
 			width: 100%;
 			padding: 0;
+			float: none;
 
 			&:first-child{
 				text-align: left;
@@ -158,22 +178,26 @@
 				width: 85%;
 				float: left;
 				padding: 0.5em;
+
+				img{
+					display: none;
+				}
 			}
 
 			.match-history{
 				display: none;
 			}
 
-
 		}
 		.metadata {
-			padding-bottom: 0;
+			padding: 0.5em;
+			display: block;
 
 			time{
 				text-align: left;
 			}
-			strong.half-time-score,
 			strong.channels,
+			strong.half-time-score,
 			p{
 				display: none;
 			}
@@ -181,11 +205,28 @@
 	}	
 
 	&.narrow{
+		ul.match-history{
+			padding: 0;
+			text-align: center;
+		}
 
+		h3 img{
+			display: none;
+		}
 	}
 	&.medium,
 	&.normal{
-		.metadata strong.channels{
+
+		.metadata {
+			text-align: center;
+			p{				
+				display: inline;
+				&:nth-child(2):after{
+					content:' /';
+				};
+			}
+		}
+		.match strong.channels{
 			width: auto;
 			padding: 0.4em 1em;
 		}
