@@ -158,6 +158,10 @@
 	&.tiny{
 		.match{
 			margin-bottom: 1em;
+
+			.metadata strong.channels + time{
+				padding-bottom: 0;
+			}
 		}
 		.match .c4{
 			width: 100%;

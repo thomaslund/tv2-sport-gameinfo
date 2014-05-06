@@ -151,74 +151,78 @@
   margin-bottom: 1em;
 }
 /* line 162, ../sass/tv2-gameinfo.scss */
+.module-gameinfo.tiny .match .metadata strong.channels + time {
+  padding-bottom: 0;
+}
+/* line 166, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4 {
   width: 100%;
   padding: 0;
   float: none;
 }
-/* line 167, ../sass/tv2-gameinfo.scss */
+/* line 171, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4:first-child {
   text-align: left;
   padding: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 172, ../sass/tv2-gameinfo.scss */
+/* line 176, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4 .score {
   float: right;
   width: 15%;
   text-align: center;
 }
-/* line 177, ../sass/tv2-gameinfo.scss */
+/* line 181, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4 h3 {
   width: 85%;
   float: left;
   padding: 0.5em;
 }
-/* line 182, ../sass/tv2-gameinfo.scss */
+/* line 186, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4 h3 img {
   display: none;
 }
-/* line 187, ../sass/tv2-gameinfo.scss */
+/* line 191, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .match .c4 .match-history {
   display: none;
 }
-/* line 192, ../sass/tv2-gameinfo.scss */
+/* line 196, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .metadata {
   padding: 0.5em;
   display: block;
 }
-/* line 196, ../sass/tv2-gameinfo.scss */
+/* line 200, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .metadata time {
   text-align: left;
 }
-/* line 201, ../sass/tv2-gameinfo.scss */
+/* line 205, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.tiny .metadata strong.channels,
 .module-gameinfo.tiny .metadata strong.half-time-score,
 .module-gameinfo.tiny .metadata p {
   display: none;
 }
-/* line 208, ../sass/tv2-gameinfo.scss */
+/* line 212, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.narrow ul.match-history {
   padding: 0;
   text-align: center;
 }
-/* line 213, ../sass/tv2-gameinfo.scss */
+/* line 217, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.narrow h3 img {
   display: none;
 }
-/* line 220, ../sass/tv2-gameinfo.scss */
+/* line 224, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.medium .metadata, .module-gameinfo.normal .metadata {
   text-align: center;
 }
-/* line 222, ../sass/tv2-gameinfo.scss */
+/* line 226, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.medium .metadata p, .module-gameinfo.normal .metadata p {
   display: inline;
 }
-/* line 224, ../sass/tv2-gameinfo.scss */
+/* line 228, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.medium .metadata p:nth-child(2):after, .module-gameinfo.normal .metadata p:nth-child(2):after {
   content: ' /';
 }
-/* line 229, ../sass/tv2-gameinfo.scss */
+/* line 233, ../sass/tv2-gameinfo.scss */
 .module-gameinfo.medium .match strong.channels, .module-gameinfo.normal .match strong.channels {
   width: auto;
   padding: 0.4em 1em;
