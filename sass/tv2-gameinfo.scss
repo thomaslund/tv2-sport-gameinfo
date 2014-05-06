@@ -43,11 +43,10 @@
 		margin-bottom: 2em;
 		
 		&:focus{
-			
-			@extend %focus-outline;
+			outline: 0;
 
 			.team{
-				//@extend %focus-outline;
+				@extend %focus-outline;
 			}
 		}
 
